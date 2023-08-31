@@ -1,26 +1,27 @@
 #include <stdio.h>
-
-int main ()
+int main() 
 {
-    char string = "hello ";
-
-    char vowels = {'a','e','i','o','u'};
     
-    char vowels_present = 0 ;
+    int num, originalNum, remainder, result = 0;
+    
+    printf("Enter a three-digit integer: ");
+    scanf("%d", &num);
+    
+    originalNum = num;
 
-    for (int i = 0 ; i<= length(string); i++ ){
-        if (string == vowels){
-            vowels_present = 1;
-            }
-    }
-
-    if (vowels_present = 1){
-        printf("Yes !");
+    while (originalNum != 0) {
+        remainder = originalNum % 10;
         
-    }   else {
-        Printf("Nooo!");
+       result += remainder * remainder * remainder;
+
+       originalNum /= 10;
     }
+
+    if (result == num)
+        printf("%d is an Armstrong number.", num);
+        
+    else
+        printf("%d is not an Armstrong number.", num);
 
     return 0;
-
 }
